@@ -1,11 +1,9 @@
 {
-  "name": "myexpressapp",
+  "name": "express2",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "devStart1": "nodemon server.js",
-    "devStart2": "nodemon myserver.js",
-    "devStart3": "nodemon server2.js",
     "build": "npm run build"
   },
   "author": "",
