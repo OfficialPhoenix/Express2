@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&family=Sofia&display=swap" rel="stylesheet">
+
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&family=Sofia&display=swap');
+        *{
+            margin: 0;
+        }
+        body{
+            background-color: rgb(22, 82, 82);
+        }
+        .form{
+            margin: auto;
+            margin-top: 5%;
+            padding: 2%;
+            width: 320px;
+            height: fit-content;
+            background-color: white;
+        }
+        label{
+            font-size: 20px;
+            font-family: sofia;
+            font-weight: bold;
+        }
+        input{
+            width: 300px;
+            font-size: 16px;
+            padding: 5%;
+        }
+        form button{
+            width: 320px;
+            background-color: rgb(173, 119, 18);
+            color: aliceblue;
+            font-size: 20px;
+            padding: 3%;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form h3{
+            text-align: center;
+            font-size: 25px;
+            text-shadow: 2px 2px 3px;
+        }
+        .alert{
+            background-color: rgb(255, 138, 138);
+            width: 320px;
+            display: block;
+        }
+        .alert span{
+            font-size: 22px;
+            font-family: times;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="form">
+        <h3 style="font-family: sofia;
+         color: rgb(173, 119, 18);">TEAMWAY</h3><h3>Agent Login</h3>
+        <form action="/agent/login" method="post">
+            <label>Username:</label><br>
+            <input type="text" placeholder="Enter your username..." 
+            name="username" required/><br><br><br>
+            <div class="alert">
+                <span><%=error %> </span></div>
+            <label>Password:</label><br>
+            <input type="password" placeholder="Enter your password..."
+             name="password" required/>
+            <br><br><br>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    <script>
+    </script>
+</body>
+</html>

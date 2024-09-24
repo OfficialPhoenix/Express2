@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&family=Sofia&display=swap" rel="stylesheet">
+
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&family=Sofia&display=swap');
+        *{
+            margin: 0;
+        }
+        body{
+            background-color: rgb(22, 82, 82);
+        }
+        .form{
+            margin: auto;
+            margin-top: 5%;
+            padding: 2%;
+            width: 320px;
+            height: fit-content;
+            background-color: white;
+        }
+        label{
+            font-size: 20px;
+            font-family: sofia;
+            font-weight: bold;
+        }
+        input{
+            width: 300px;
+            font-size: 16px;
+            padding: 5%;
+        }
+        form button{
+            width: 320px;
+            background-color: rgb(173, 119, 18);
+            color: aliceblue;
+            font-size: 20px;
+            padding: 3%;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form h3{
+            text-align: center;
+            font-size: 25px;
+            text-shadow: 2px 2px 3px;
+        }
+        .alert{
+            background-color: rgb(255, 138, 138);
+            width: 320px;
+            display: block;
+        }
+        .form span{
+            font-size: 22px;
+            font-family: times;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="form">
+        <span> <%=message %></span>
+        <form action="/new_lead" method="post">
+            <label>Lead Full Name:</label><br>
+            <input type="text" name="leadFullName" required /><br><br>
+            <label>Email:</label><br>
+            <input type="email" name="email" required /><br><br>
+            <label>Phone Number</label><br>
+            <input type="number" name="phone" minlength="11" maxlength="11" />
+            <br><br>
+            <button type="submit">Submit</button>
+            <a href="/agent/dashboard" style="font-size: 16px;">Goto dashboard</a>
+        </form>
+    </div>
+</body>
+</html>

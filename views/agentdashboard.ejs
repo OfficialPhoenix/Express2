@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&family=Sofia&display=swap" rel="stylesheet">
+        <style>
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&family=Sofia&display=swap');
+        *{
+            margin: 0;
+        }
+        body{
+            background-color: rgba(192, 192, 192, 0.637);
+        }
+        .sidebar{
+            background-color: white;
+            width: 300px;
+            height: fit-content;
+            top: 0;
+            padding: 0.5%;
+        }
+        .sidebar ul{
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            list-style-type: none;
+        }
+        ul li{
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        li a{
+            color: black;
+            font-size: 15px;
+            text-decoration: none;
+            font-family: Playwrite DE Grund;
+            font-weight: bold;
+        }
+        li a:hover{
+            color: rgb(212, 141, 7);
+        }
+        li button{
+            background-color: rgb(165, 108, 2);
+            color: white;
+            font-size: 18px;
+            font-family: cochin;
+            width: 200px;
+            height: 50px;
+            padding: 1%;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .container{
+            display: flex;
+        }
+        .searchbar{
+            background-color: #fff;
+            max-width: 100%;
+            padding: 1%;
+            display: flex;
+            gap: 10px;
+            position: sticky;
+            top: 0;
+        }
+        .searchbar #search{
+            cursor: pointer;
+            margin-top: 1%;
+            margin-left: 7%;
+        }
+        input{
+            outline: none;
+            border: none;
+            background: transparent;
+            width: 80%;
+        }
+        input::placeholder{
+            font-size: 16px;
+            font-family: sans-serif;
+        }
+        .active{
+            height: 10px;
+            width: 10px;
+            background-color: rgb(5, 209, 5);
+            border-radius: 50%;
+            position: absolute;
+            left: 88.5%;
+            top: 63%;
+        }
+        .bio{
+            display: flex;
+            gap: 5px;
+            margin-top: 5%;
+        }
+        .status{
+            display: inline-flex;
+            gap: 20px;
+            margin-left: 2%;
+        }
+        .child-status{
+            width: 320px;
+            height: 200px;
+            border-radius: 10px;
+            display: grid;
+        }.child-status ul{
+            display: flex;
+            flex-direction: column;
+            margin-top: 25%;
+        }.child-status ul li{
+            font-size: 22px;
+            font-family: playwrite de grund;
+            color: #fff;
+        }
+        #cs1{
+            background-color: aqua;
+        }
+        #cs2{
+            background-color: rgb(144, 83, 241);
+        }
+        #cs3{
+            background-color: rgb(226, 128, 92)
+        }
+        .lead-details{
+            width: 950px;
+            height: fit-content;
+            background-color: #fff;
+            margin-left: 2%;
+            margin-top: 3%;
+            border-radius: 10px;
+            padding: 3%;
+        }
+        .lead-details h2{
+            font-family: playwrite de grund;
+            font-size: 18px;
+        }
+        .lead-details table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+        tr td{
+            text-align: center;
+            padding: 2%;
+            font-size: 20px;
+            font-family: times;
+        }
+        th{
+            height: 50px;
+            background-color: rgb(165, 108, 2);
+            font-size: 16px;
+            font-family: playwrite De grund;
+        }
+        tbody{
+            background-color: ghostwhite
+        }
+    </style>
+</head>
+<body>
+        <div class="searchbar">
+            <h1 style="font-family: sofia; color: maroon;">TEAMWAY</h1>
+            <img src="/searchicon.png" alt="" height="20" id="search">
+            <input type="search" placeholder="Search project" name="" id="">
+            <div class="active"></div>
+            <img src="/pic.PNG" alt="" height="50" style="border-radius: 50%;"><span style="color: 
+            gray;font-family: sofia;">
+                Adeola Quadri
+            </span>
+        </div>
+        <div class="container">
+    <div class="sidebar">
+        <ul>
+            <div class="bio">
+       <img src="/pic.PNG" alt="" height="50" style="border-radius: 50%;">
+        <span style="color: rgb(0, 0, 0); margin-top: 1%; font-family: sofia;">Adeola Quadri
+        <br><span style="color: gray;">Active</span></span>
+        </div>
+        <li><a href="">Dashboard</a>
+            <img src="/dashboard.png" height="30"></li>
+
+        <li><a href="">My Profile</a>
+            <img src="/profile.png" height="30"></li>
+
+        <li><a href="/agent/dashboard/leads" id="checklist">Lead Checklist</a>
+            <img src="/checklist.png" height="30"></li>
+
+        <li><a href="">Eligible States</a>
+            <img src="/eligible.png" height="30"></li>
+
+        <li><a href="">Lead income Requirements</a>
+            <img src="/income.png" height="30"></li>
+
+        <li><a href="">Terms and Conditions</a>
+            <img src="/t&c.png" height="30"></li>
+
+        <li><a href="">Payments</a>
+            <img src="/payment.png" height="30"></li>
+
+        <li><a href="/logout" id="logout">Logout</a>
+            <img src="/logout.png" height="30"></li>
+
+        <li><button><a style="color: white;" 
+            href="/agent/dashboard/new_lead">Submit New Lead</a></button></li>
+        </ul>
+    </div>
+    <div class="content">
+        <header style="font-family: sofia; font-size: 20px; font-weight: bold; margin-left: 2%;">
+            Agent Dashboard</header><br>
+            <span id="success" style="margin-left: 2%; 
+            font-size: 16px; font-family: Playwrite DE Grund;">Welcome, <b>Mr <%=username %></b></span><br>
+    <div class="status">
+        <div class="child-status" id="cs1">
+            <ul>
+                <li>Total Leads Submission</li>
+                <li style="font-size: 40px; font-family: arial; font-weight: bold;">10</li>
+            </ul>
+        </div>
+        <div class="child-status" id="cs2">
+            <ul>
+                <li>Pending Leads</li>
+                <li style="font-size: 40px; font-family: arial; font-weight: bold;">6</li>
+            </ul>
+        </div>
+        <div class="child-status" id="cs3">
+            <ul>
+                <li>Approved Leads</li>
+                <li style="font-size: 40px; font-family: arial; font-weight: bold;" id="aLeads"></li>
+            </ul>
+        </div>
+    </div>
+    <div class="lead-details">
+        <h2>LEAD DETAILS</h2>
+        <table class="table-data">
+            <tr>
+                <th>Lead Detail Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Submission Date</th>
+                <th>ID No</th>
+            </tr>
+            <tbody id="mytable">
+                <!-- <tr>
+                    <td>Adeola Quadri</td>
+                    <td>adeolaakorede27@gmail.com</td>
+                    <td>08157486374</td>
+                    <td>2024-09-23</td>
+                    <td>1</td>
+                    </tr>  -->
+            </tbody>
+        </table>
+    </div>
+    </div>
+    </div>
+   <script>
+        document.querySelector("#logout").addEventListener('click', (e)=>{
+            if(confirm('Do you want to logout?') == true){
+          fetch('/logout', {
+            method: 'get'}
+            )
+        }else{
+            e.preventDefault()
+
+        }})
+        document.querySelector("#checklist").addEventListener("click", (e)=>{
+            e.preventDefault()
+            fetch('/agent/dashboard/leads')
+            .then(res => res.json())
+            .then(res => {
+                const data = res
+                let rows = ''
+                data.forEach(lead => {
+                    rows += `<tr>
+                        <td>${lead.Lead_Detail_Name}</td>
+                        <td>${lead.Email}</td>
+                        <td>0${lead.Phone_Number}</td>
+                        <td>${lead.Submission_Date.slice(0, 10)}</td>
+                        <td>${lead.id}</td>
+                        </tr>`
+                })
+                document.getElementById('mytable').innerHTML = rows;
+            })
+            .catch(error => console.log(error))
+    })
+    fetch('/agent/dashboard/leads')
+            .then(res => res.json())
+            .then(res => {
+                const data = res
+                document.getElementById('aLeads').innerHTML = data.length
+
+            })
+   </script>
+</body>
+</html>
