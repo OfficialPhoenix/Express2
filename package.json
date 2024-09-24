@@ -5,7 +5,8 @@
   "scripts": {
     "devStart1": "nodemon server.js",
     "devStart2": "nodemon myserver.js",
-    "devStart3": "nodemon server2.js"
+    "devStart3": "nodemon server2.js",
+    "build": "npm run build"
   },
   "author": "",
   "license": "ISC",
