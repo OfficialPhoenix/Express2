@@ -17,7 +17,7 @@ app.use(express.static('public'))
 app.use(cookieParser())
 
 //API routes
-app.get('/agent/login', (req, res)=>{
+app.get('/agent', (req, res)=>{
     res.render('agentlog.ejs', {error: ""})
 })
 app.get('/agent/dashboard', (req, res)=>{
@@ -27,7 +27,7 @@ app.get('/agent/dashboard', (req, res)=>{
         res.render("agentdashboard.ejs", {username:verify.username})
       }
       else{
-        res.redirect('/agent/login')
+        res.redirect('/agent')
       }
 })
 app.get('/agent/dashboard/new_lead', (req, res)=>{
@@ -41,14 +41,14 @@ app.get('/agent/dashboard/new_lead', (req, res)=>{
 })
 app.get('/logout', (req, res)=>{
     res.cookie("jwt", "", {maxAge: 1})
-    res.redirect('/agent/login')
+    res.redirect('/agent')
 })
 
 //End API routes
 
 
 //Agent Login Authentication
-app.post('/agent/login', (req, res)=>{
+app.post('/agent', (req, res)=>{
     const user = {
         username: process.env.userAgent,
         password: process.env.userAgentPassword
